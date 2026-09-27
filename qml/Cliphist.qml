@@ -545,17 +545,6 @@ Item {
                 Keys.onPressed: (event) => root.onShortcutPressed(event)
             }
 
-            // multi select state / hint, hidden as soon as the query gets in the way
-            Text {
-                anchors.right: parent.right
-                anchors.rightMargin: 8
-                anchors.verticalCenter: parent.verticalCenter
-                visible: !fullPreview && searchInput.text.length === 0 && root.markedIds.length === 0
-                text: " / [SPACE] to multi-select"
-                color: Theme.fg4
-                font { family: Theme.fontFamily; pixelSize: 9 }
-            }
-
             Text {
                 anchors.right: parent.right
                 anchors.rightMargin: 8
