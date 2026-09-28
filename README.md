@@ -178,8 +178,8 @@ into your session at all times. It's not bound to any dotfiles.
   - `Del`: deletes the marked items, or the highlighted one when nothing is marked
   - `Esc`: drops the marks first, closes the panel on the second press
 
-- Notifications are able to show in slide animation (similar to iOS mute) while you playing video game or watching movie in full screen.
-  also it can show custom app icon to show in notification, else it shows bell icon.
+- Notifications, brightness and volume are able to show in slide animation (similar to iOS mute) while you playing video game or watching movie
+  in full screen.
 
 - Your today's data usage in mini dashboard is shown by [nusgmon](https://github.com/LUCKYS1NGHH/nusgmon) (i am the creator of it too).
 
