@@ -1249,6 +1249,49 @@ ShellRoot {
     }
   }
 
+  // brightness OSD over fullscreen windows
+  FullscreenOsd {
+    id: fsBrightness
+    active: box.activeOsd === "brightness" && fullscreenActive && !notifFullscreenMode
+    cardWidth: 220 * box.dpi
+    cardHeight: 42 * box.dpi
+
+    RowLayout {
+      Layout.alignment: Qt.AlignVCenter
+      spacing: 12 * box.dpi
+
+      Text {
+        text: brightnessModule.icon
+        color: Theme.fg
+        font { family: Theme.nerdFontFamily; pixelSize: 16 * box.dpi }
+      }
+
+      // same bar geometry and fill speed as the pill OSD
+      Rectangle {
+        width: 100 * box.dpi
+        height: 4 * box.dpi
+        radius: 2 * box.dpi
+        color: Theme.bg1
+        Layout.alignment: Qt.AlignVCenter
+
+        Rectangle {
+          width: parent.width * brightnessModule.percent
+          height: parent.height
+          radius: parent.radius
+          color: Theme.fg
+          Behavior on width { NumberAnimation { duration: osdSpeed; easing.type: Easing.OutCubic } }
+        }
+      }
+
+      Text {
+        text: Math.round(brightnessModule.percent * 100) + "%"
+        color: Theme.fg
+        font { family: Theme.fontFamily; pixelSize: 10 * box.dpi; weight: 600 }
+        Layout.alignment: Qt.AlignVCenter
+      }
+    }
+  }
+
   // audio visualizer spectrum process
   Process {
     id: cavaProc
